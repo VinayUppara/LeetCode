@@ -2,13 +2,11 @@
 public class Staircase {
 
 	public int climbStairs(int n) {
-		 int a = 1, b = 1;
-		   for(int i=0;i<n;i++) {
-		        a = (b += a) - a;
-		   }
-		    return a;
+		/*
+		 * int a = 1, b = 1; for(int i=0;i<n;i++) { a = (b += a) - a; } return a;
+		 */
 		
-		// base cases
+		
 		/*
 		 * if(n <= 0) return 0; if(n == 1) return 1; if(n == 2) return 2;
 		 * 
@@ -20,14 +18,29 @@ public class Staircase {
 		 * 
 		 * one_step_before = all_ways; } return all_ways;
 		 */
-	
+		
+		int dp[] = new int[n];
+		if (n == 1) {
+            return 1;
+        }
+        if (n == 2) {
+            return 2;
+        }
+        
+		dp[0] = 1;
+		dp[1] = 2;
+		
+		for(int i=2;i<n;i++) {
+			dp[i] = dp[i-1]+dp[i-2];
+		}
+	return dp[n-1];
 	}
 
 
 
 	static public void main(String...strings) {
 		
-		System.out.println(new Staircase().climbStairs(5));
+		System.out.println(new Staircase().climbStairs(4));
 	}
 
 }
