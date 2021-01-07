@@ -6,11 +6,11 @@ public class SmallerThanCurrent {
 
 		int result[] = new int[nums.length];
 		
-		Integer temp[]  = Arrays.copyOf(nums, nums.length);
+		int temp[]  = Arrays.copyOf(nums, nums.length);
 
 		Arrays.sort(temp);
 
-		result[] = 0;
+		result[0] = 0;
 		for(int i=1;i<nums.length;i++) {
 			int j=i+1;
 			while(j<nums.length) {

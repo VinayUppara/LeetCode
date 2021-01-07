@@ -14,7 +14,7 @@ public class ReverseWords {
 			resultString+=modifiedString[i]+" ";
 		}
 		
-		return resultString.stripTrailing();
+		return resultString;
 	}
 
 	static public void main(String...strings) {
